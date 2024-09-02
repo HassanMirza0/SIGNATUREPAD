@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Signature Pad</title>
+  <meta name="description" content="Signature Pad Application">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- Latest Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="signature-pad.css">
+</head>
+<body>
+  <div class="container my-4">
+    <h1 class="text-center mb-4">Signature Pad</h1>
+    <p class="text-center">Please provide your signature below:</p>
+  </div>
+
+  <div id="signature-pad" class="signature-pad container">
+    <div class="signature-pad--body">
+      <canvas></canvas>
+    </div>
+    <div class="signature-pad--footer">
+      <div class="signature-pad--actions text-center">
+        <div class="button-group mb-3">
+          <button type="button" class="btn btn-danger" data-action="clear">Clear</button>
+          <button type="button" class="btn btn-info" data-action="change-color">Change Color</button>
+          <button type="button" class="btn btn-warning" data-action="undo">Undo</button>
+        </div>
+        <div class="button-group ">
+          <button type="button" class="btn btn-success" data-action="save-svg" hidden>Save SVG</button>
+          <button type="button" class="btn btn-success" data-action="save-png" hidden>Save PNG</button>
+          <button type="button" class="btn btn-success  button-group" data-action="save-jpg">Download </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9h5ib8HAd+Y0lhZyF+hpuOjFcf5/MHCEkRzG/B2w5C3f5+AB5G" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha384-C4X2x7zbl5rycR8j7cAiQOibz53G5Cx9GzT5H8UtLE7GTcN8i6fQQ9F5kjz6/t3r" crossorigin="anonymous"></script>
+  <script src="signature_pad.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
