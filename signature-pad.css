@@ -1,0 +1,185 @@
+/* Basic reset and body styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Professional font family */
+  background-color: black; /* Dark background for the whole page */
+  color: #e0e0e0; /* Light text color for contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  min-height: 100vh; /* Ensure full height of viewport */
+  padding: 0 15px; /* Padding for smaller screens */
+  box-sizing: border-box; /* Ensure padding is included in the height/width */
+}
+
+.container {
+  max-width: 90%; /* Max width is 90% of the viewport for responsiveness */
+  /*margin: auto; /* Center the container horizontally */
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem; /* Larger font size for heading */
+  font-weight: 600; /* Semi-bold heading */
+  margin-bottom: 1rem; /* Spacing below the heading */
+}
+
+p {
+  color: #b0b0b0; /* Slightly lighter text for description */
+  font-size: 1.1rem; /* Slightly larger text for readability */
+  margin-bottom: 2rem; /* Space below the paragraph */
+}
+
+#signature-pad {
+  background: #1f1f1f;
+  border-radius: 29px;
+  padding: 18px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 579px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.signature-pad--body {
+  background: #2c2c2c; /* Canvas background */
+  border: 2px solid #444; /* Border around the canvas */
+  border-radius: 4px; /* Slightly rounded corners */
+  padding: 10px; /* Padding around the canvas */
+  width: 100%; /* Full width for responsiveness */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+canvas {
+  border-radius: 4px; /* Rounded corners for the canvas */
+  display: block; /* Ensures the canvas is block-level */
+  width: 100%; /* Full width */
+  height: 400px; /* Fixed height for the canvas */
+}
+
+.signature-pad--footer {
+  width: 100%; /* Full width for responsiveness */
+  margin-top: 20px;
+}
+
+.signature-pad--actions {
+  width: 100%; /* Full width for buttons container */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically by default */
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap; /* Wrap buttons to a new line on smaller screens */
+  gap: 10px; /* Space between buttons */
+  justify-content: center; /* Center the buttons */
+  margin: 3px; /* Space below the button row */
+  
+}
+
+/* Maintain default button styling */
+.btn {
+  font-size: 0.9rem;
+  padding: 10px 20px; /* Adjusted padding for better button size */
+  border-radius: 12px; /* Rounded buttons */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Red color for the "Clear" button */
+  color: #fff; /* Light text color */
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Yellow color for the "Change Color" and "Undo" buttons */
+  color: #fff; /* Light text color */
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.btn-info {
+  background-color: #17a2b8; /* Bootstrap info color */
+  color: #fff; /* Light text color */
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #138496; /* Darker info color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.btn-success {
+  background-color: #28a745; /* Green color for "Save" buttons */
+  color: #fff; /* Light text color */
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive adjustments for mobile view only */
+@media (max-width: 450px) {
+  canvas {
+    height: 300px; /* Adjust canvas height for smaller tablets and mobile devices */
+  }
+
+  .btn {
+    font-size: 0.9rem; /* Maintain font size for buttons */
+    padding: 10px 15px; /* Adjust padding for better button size */
+  }
+
+  .signature-pad--actions {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    align-items: stretch; /* Stretch buttons to full width */
+  }
+
+  .button-group {
+    width: 100%; /* Full width for button group */
+  }
+
+  .btn-danger, .btn-warning, .btn-info, .btn-success {
+    width: 100%; /* Full width for buttons on small screens */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust font size for heading */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust font size for paragraph */
+  }
+}
+
+@media (min-width: 450px) {
+  .signature-pad--actions {
+    flex-direction: column; /* Ensure the button group stacks vertically in all views */
+  }
+
+  .button-group {
+    flex-direction: row; /* Align buttons in a row */
+    gap: 10px; /* Space between buttons */
+    width: 90%; /* Auto width for button group */
+  }
+
+  .btn-danger, .btn-warning, .btn-info .btn-success {
+    width: auto; /* Normal width for buttons on larger screens */
+  }
+}
